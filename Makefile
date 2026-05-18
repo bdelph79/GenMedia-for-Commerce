@@ -71,10 +71,10 @@ deploy-agent-engine: sync-config
 		--requirements-file=genmedia4commerce/app_utils/.requirements.txt \
 		--display-name=genmedia-for-commerce \
 		--description="GenMedia for Commerce agent" \
-		--cpu=8 \
-		--memory=32Gi \
-		--min-instances=2 \
-		--max-instances=10 \
+		--cpu=1 \
+		--memory=2Gi \
+		--min-instances=0 \
+		--max-instances=5 \
 		--container-concurrency=7 \
 		$(if $(AGENT_IDENTITY),--agent-identity) \
 		$(if $(filter command line,$(origin SECRETS)),--set-secrets="$(SECRETS)")
